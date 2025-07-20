@@ -30,3 +30,8 @@ variable "secondvpc" {
   type = string
   default = "10.1.0.0/16"
 }
+variable "aws_s3_bucket" {
+  description = "aws s3 bucket creation"
+  type = string
+  default = ""
+}
