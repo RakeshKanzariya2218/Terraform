@@ -1,7 +1,7 @@
 ami = "ami-0150ccaf51ab55a51"
 instance_type = "t2.micro"
 key_name = "key-1"
-tags = "Terraform-1"
+tags = "Terraform-statelocking"
 cidr_block = "10.0.0.0/16"
 secondvpc = "10.1.0.0/16"
 aws_s3_bucket = "shantilalshahengineeringcollegebhavnagar"

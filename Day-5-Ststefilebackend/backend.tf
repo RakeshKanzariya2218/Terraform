@@ -18,4 +18,9 @@ terraform {
     encrypt      = true  
     use_lockfile = true  #S3 native locking
   }  
-}  */
+}  
+
+this is the new update by terraform for the supporting s3  bucket to native lock use this configuraton and
+enable the statelocking of s3 statefiele.
+
+*/
