@@ -10,3 +10,7 @@ resource "aws_instance" "name" {
 resource "aws_vpc" "name" {
   cidr_block = var.cidr_block
 }
+
+resource "aws_vpc" "socondvpc" {
+  cidr_block = var.secondvpc
+}
