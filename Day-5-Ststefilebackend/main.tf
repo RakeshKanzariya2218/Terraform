@@ -6,3 +6,7 @@ resource "aws_instance" "name" {
     Name = var.tags
   }
 }
+
+resource "aws_vpc" "name" {
+  cidr_block = var.cidr_block
+}

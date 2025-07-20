@@ -19,3 +19,10 @@ variable "tags" {
   default = ""
 
 }
+
+  
+variable "cidr_block" {
+  description = "vpc cidr range"
+  type = string
+  default = ""
+}
