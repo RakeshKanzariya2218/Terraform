@@ -14,6 +14,3 @@ resource "aws_vpc" "name" {
 resource "aws_vpc" "socondvpc" {
   cidr_block = var.secondvpc
 }
-resource "aws_s3_bucket" "name" {
-  bucket = var.aws_s3_bucket
-}
