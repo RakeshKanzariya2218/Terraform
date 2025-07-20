@@ -1,4 +1,5 @@
 terraform {
+
   backend "s3" {
     bucket = "rkanzariya.info"
     key    = "terraform.tfstate"
@@ -13,6 +14,7 @@ terraform {
 /*
 
 terraform {  
+# required_versiion = "<=1.10"   # this will allow to work same terraform version only.
   backend "s3" {  
     bucket       = "your-terraform-state-bucket"  
     key          = "path/to/your/statefile.tfstate"  
@@ -29,7 +31,8 @@ enable the statelocking of s3 statefiele.
 
 the old using dynamodb lock file for enablleing the statelocking :
 
-terraform {  
+terraform { 
+# required_versiion = "<=1.10"   # this will allow to work same terraform version only.
   backend "s3" {  
     bucket       = "your-terraform-state-bucket"  
     key          = "path/to/your/statefile.tfstate"  
