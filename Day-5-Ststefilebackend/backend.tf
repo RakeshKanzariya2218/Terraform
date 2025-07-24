@@ -24,3 +24,18 @@ this is the new update by terraform for the supporting s3  bucket to native lock
 enable the statelocking of s3 statefiele.
 
 */
+
+/* fir the dynamodb  table statelocking :
+terraform {
+  backend "s3" {
+    bucket = "rkanzariya.info"
+    key    = "terraform.tfstate"
+    region = "us-east-1"
+    encrypt      = true  
+    dynamodb_table = <TABLE NAME> 
+  }
+}
+
+   in this case one dynamodb tabke was created with prtition key = "lockID".
+   Dynamo  DB methos support for the >1.10 verson and se native lock support on 1.10> version .
+   */
