@@ -14,3 +14,4 @@ resource "aws_vpc" "name" {
 resource "aws_vpc" "socondvpc" {
   cidr_block = var.secondvpc
 }
+
