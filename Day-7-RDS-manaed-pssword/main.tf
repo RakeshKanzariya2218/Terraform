@@ -41,6 +41,9 @@ resource "aws_db_instance" "rds-1" {
   engine_version = "8.0"                              # Uses MySQL version 8.0, the latest major supported release
   instance_class = "db.t3.micro"                      # Selects a cost-effective burstable instance type for dev/test
   manage_master_user_password = true                  #  Enables AWS Secrets Manager to auto-generate and securely store the master password :contentReference[oaicite:1]{index=1}
+                                                      # while using manage_master_user_password   then no need to create any secrret and store the secret its automatically create and store the secrets.
+
+
   username = "admin"                                  # Defines the master DB user for initial access; password managed via Secrets Manager
   db_subnet_group_name = aws_db_subnet_group.group.id # Ensures the DB is placed in your VPC’s subnets for proper networking
   parameter_group_name = "default.mysql8.0"           # Applies the default parameter group—customize only if needed
