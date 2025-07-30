@@ -9,4 +9,13 @@ variable "instance_type" {
   type = string
   default = "t2.micro"
 }
+variable "tags" {
+  description = "tag of instance"
+  type = string
+  default = "Terraform-1"
+}
 
+variable "instance_tags" {
+  type = string
+  default = "Terraform-2"
+}

@@ -2,7 +2,7 @@ resource "aws_instance" "name" {
  ami = var.ami_id
  instance_type = var.instance_type
  tags = {
-   Name = "Terraform-1"
+   Name = var.tags
  }
 
 }
@@ -10,7 +10,7 @@ resource "aws_instance" "Name" {
  ami = var.ami_id
  instance_type = var.instance_type
  tags = {
-   Name = "Terraform-2"
+   Name = var.instance_tags
  }
 
 }
