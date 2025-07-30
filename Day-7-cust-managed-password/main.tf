@@ -91,4 +91,3 @@ resource "aws_db_instance" "mysql" {
   skip_final_snapshot    = true
   publicly_accessible = true
 }
-
