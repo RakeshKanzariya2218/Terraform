@@ -1,0 +1,79 @@
+terraform init
+
+terraform workspace show
+# -> default
+
+terraform workspace new dev
+terraform apply -var-file="dev.tfvars"
+
+terraform workspace new prod
+terraform apply -var-file="prod.tfvars"
+
+terraform workspace list
+# -> default, * dev, prod
+
+terraform workspace select dev
+terraform workspace show
+# -> dev
+
+terraform workspace select default
+terraform workspace delete prod
+------------------------------------------------------------------------------------------------------
+
+🌐 What Is a Terraform Workspace?
+A Terraform workspace is a named instance of Terraform state that lets you deploy the same 
+infrastructure code multiple times—each with its own isolated state. Workspaces let you manage 
+distinct environments (like dev, staging, prod) using a single set of .tf files.
+
+
+
+🔧 How It Works in Practice
+Default workspace: Terraform initializes in a default workspace with a single state file.
+
+Creating a new workspace (e.g. dev) produces its own state file
+(e.g. in terraform.tfstate.d/dev/terraform.tfstate or backend storage).
+
+Commands operate against the currently selected workspace's state, which ensures strict isolation 
+between environments.
+
+
+🧾 Main Commands
+Command	What It Does
+terraform workspace new <name>	             Creates and switches to a new workspace
+terraform workspace select <name>	         Switches to an existing workspace
+terraform workspace list	                 Lists all workspaces (current one marked *)
+terraform workspace show	                 Shows the currently active workspace
+terraform workspace delete <name>	         Deletes an empty workspace
+
+⚙️ Simple Example
+
+terraform init
+terraform workspace show       # -> default
+terraform workspace new dev    # -> enters dev workspace
+terraform apply                # applies dev-specific resources
+terraform workspace list       # shows default, * dev
+terraform workspace select default
+terraform workspace delete dev # remove dev workspace (if empty)
+Each workspace uses its own Terraform state so changes in one don’t affect others.
+Spacelift
+Terraform Architect
+
+💡 Use Cases & Best Practices
+Use when infrastructure structure is similar across environments (only parameters vary).
+
+
+Parameterize environment-specific values using terraform.workspace or TF variables 
+(e.g. different instance sizes or naming).
+
+
+Best to use with remote backends (like S3, Azure Blob Storage, Terraform Cloud) to handle state 
+locking, versioning, and secure storage.
+
+Not intended for fully distinct configurations—use separate modules or directories if your 
+environments differ significantly.
+
+
+✅ TL;DR
+Workspaces give you state isolation for multiple instances of the same Terraform configuration—ideal
+for managing environments like dev, staging, prod—while minimizing code duplication and simplifying 
+workspace switching with a few CLI commands.
