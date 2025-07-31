@@ -6,9 +6,11 @@ data "aws_subnet" "name" {
 }
 
 data "aws_ami" "amzonlinux" {
-  most_recent = true
-  owners      = ["amazon"]
-  filter {
+  most_recent = true                         #  Meaning of most_recent = true   { It instructs Terraform to return only the most recently published AMI 
+                                             #   that matches your filters (e.g. name pattern, architecture, virtualization type, owner }
+  owners      = ["amazon"]                   #   { If your filters would match multiple AMIs (e.g. different dates), Terraform picks the latest one. 
+                                             #   Without most_recent, if multiple matches exist, Terraform fails.}
+filter {
     name   = "name"
     values = ["amzn2-ami-hvm-*-gp2"]
   }
