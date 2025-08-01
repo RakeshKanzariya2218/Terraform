@@ -10,7 +10,7 @@ variable "allowed_diff_port" {
     3389  = "10.0.1.0/24"
   }
 }                                               
-}                                           
+                                        
 
 
 resource "aws_security_group" "sg" {
