@@ -27,5 +27,6 @@ resource "aws_instance" "ec2" {
     -. Deploying Infrastructure Across Multiple Regions
             Use workspaces to manage global infrastructure deployments per region or compliance 
             zone using the same config.
-            E.g., us-east-1, eu-west-1 workspaces keep state distinct while sharing code 
+            E.g., us-east-1, eu-west-1 workspaces keep state distinct while sharing code  
+*/
     
