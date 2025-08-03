@@ -1,0 +1,37 @@
+/*
+
+string                          =  "" (empty string)	          =  default = ""
+                   
+number                          =  Any valid number	              = default = 0 or default = 10.5
+
+bool                            =  true or false	              = default = true
+
+list(string)                    = []                              = default = []
+
+list(number)                    = []                              = default = []
+
+list(object({...}))	            = []                              = default = []
+
+list(any)	                    =  []                             = default = []      
+
+map(string)	                    = {}                              = default = {}
+
+map(number)	                    =  {}                             = default = {}
+
+map(object({...}))             	=  {}                             = default = {}
+
+object({...})	                = {} or full object	              = default = { name = "", age = 0 }
+
+any	                            = null or valid value	          = default = null or e.g. default = "anything"
+
+set(string)	                    =  [] or set([])	              = default = []
+
+tuple([string, bool])	        = Match structure	              = default = ["value", true]
+
+map(list(string))	            =   {} or full map	              =  default = { "example" = ["a", "b"] }
+
+list(map(string))	            =  [] or full list	              = default = [ { key1 = "val1" }, { key2 = "val2" } ]
+
+list(map(any))	                = [] or complex structure         =  default = [ { k1 = "v1", k2 = 2 }, { k1 = "v2", k2 = 3 } ]
+
+*/
